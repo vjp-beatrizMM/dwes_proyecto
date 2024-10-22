@@ -33,15 +33,17 @@
 			<h1>CONTACT US</h1>
 			<hr>
 			<p>Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-			<?php if (isset($errores) && empty($errores)): ?>
+
+			<?php if (isset($errores) && empty($errores) && empty($errorEmail)): ?>
 				<div class="alert alert-info">
-					<?php echo 'First Name = ' . $nombre . '<br>';
-					echo 'Second Name = ' . $apellido . '<br>';
-					echo 'Email = ' . $email . '<br>';
-					echo 'Subject = ' . $asunto . '<br>';
-					echo 'Message = ' . $mensaje . '<br>'; ?>
+					<?php 
+						foreach ($datos as $dato) {
+							echo "$dato <br>";
+						}
+					?>
 				</div>
 			<?php endif; ?>
+
 			<?php if (isset($errores) && !empty($errores)): ?>
 				<div class="alert alert-danger">
 					<?php 
@@ -50,8 +52,18 @@
 						}
 					?>
 				</div>
-
 			<?php endif; ?>
+
+			<?php if (isset($errorEmail) && !empty($errorEmail)): ?>
+				<div class="alert alert-danger">
+					<?php 
+						foreach ($errorEmail as $email) {
+							echo "$email <br>";
+						}
+					?>
+				</div>
+			<?php endif; ?>
+
 			<form class="form-horizontal" method="post">
 				<div class="form-group">
 					<div class="col-xs-6">
