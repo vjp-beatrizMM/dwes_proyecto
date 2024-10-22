@@ -1,3 +1,4 @@
 <?php
-    require "views/index.views.php"
+    require "utils/ultis.php";
+    require "views/index.views.php";
 ?>
