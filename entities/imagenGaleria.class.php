@@ -2,8 +2,8 @@
 
     Class imagenGaleria {
 
-        const rutaImagenesPortfolio = __DIR__.'../images/index/portfolio';
-        const rutaImagenesGallery = __DIR__.'../images/index/gallery';
+        const rutaImagenesPortfolio = 'images/index/portfolio/';
+        const rutaImagenesGallery = 'images/index/gallery/';
 
         private $nombre;
         private $descripcion;

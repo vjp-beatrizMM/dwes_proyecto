@@ -21,9 +21,54 @@
        </div>
      </div>
    </div>
-  <!-- Pictures Navigation table -->
-  <?php include __DIR__ . '/partials/imagegallery.part.php' ?>
-  <!-- End of Index-body box -->
+
+   <div id="index-body">
+     <!-- Pictures Navigation table -->
+     <div class="table-responsive">
+       <table class="table text-center">
+         <thead>
+           <tr>
+             <td><a class="link active" href="#category1" data-toggle="tab">category I</a></td>
+             <td><a class="link" href="#category2" data-toggle="tab">category II</a></td>
+             <td><a class="link" href="#category3" data-toggle="tab">category III</a></td>
+           </tr>
+         </thead>
+       </table>
+       <hr>
+     </div>
+
+     <!-- Navigation Table Content -->
+     <div class="tab-content">
+
+
+
+       <!-- First Category pictures -->
+       <div id="category1" class="tab-pane active">
+         <?php include __DIR__ . '/partials/imagegallery.part.php' ?>
+
+
+       </div>
+       <!-- End of First category pictures -->
+
+       <!--second category pictures -->
+       <div id="category2" class="tab-pane">
+         <?php include __DIR__ . '/partials/imagegallery.part.php' ?>
+
+
+       </div>
+       <!-- End of second category pictures -->
+
+       <!-- Third Category Pictures -->
+       <div id="category3" class="tab-pane">
+
+         <?php include __DIR__ . '/partials/imagegallery.part.php' ?>
+
+       </div>
+       <!-- Third Category Pictures -->
+     </div>
+     <!-- End of Navigation Table Content -->
+   </div><!-- End of Index-body box -->
+
    <!-- Newsletter form -->
    <div class="index-form text-center">
      <h3>SUSCRIBE TO OUR NEWSLETTER </h3>
