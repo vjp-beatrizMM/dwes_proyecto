@@ -22,15 +22,28 @@
      </div>
    </div>
 
+   <?php
+    // Definir las categorías con su ID y estado de activación
+    $categories = [
+      ['id' => 'category1', 'name' => 'Category I', 'isActive' => true],
+      ['id' => 'category2', 'name' => 'Category II', 'isActive' => false],
+      ['id' => 'category3', 'name' => 'Category III', 'isActive' => false]
+    ];
+    ?>
+
    <div id="index-body">
      <!-- Pictures Navigation table -->
      <div class="table-responsive">
        <table class="table text-center">
          <thead>
            <tr>
-             <td><a class="link active" href="#category1" data-toggle="tab">category I</a></td>
-             <td><a class="link" href="#category2" data-toggle="tab">category II</a></td>
-             <td><a class="link" href="#category3" data-toggle="tab">category III</a></td>
+             <?php foreach ($categories as $category): ?>
+               <td>
+                 <a class="link <?= $category['isActive'] ? 'active' : '' ?>" href="#<?= $category['id'] ?>" data-toggle="tab">
+                   <?= $category['name'] ?>
+                 </a>
+               </td>
+             <?php endforeach; ?>
            </tr>
          </thead>
        </table>
@@ -39,35 +52,16 @@
 
      <!-- Navigation Table Content -->
      <div class="tab-content">
-
-
-
-       <!-- First Category pictures -->
-       <div id="category1" class="tab-pane active">
-         <?php include __DIR__ . '/partials/imagegallery.part.php' ?>
-
-
-       </div>
-       <!-- End of First category pictures -->
-
-       <!--second category pictures -->
-       <div id="category2" class="tab-pane">
-         <?php include __DIR__ . '/partials/imagegallery.part.php' ?>
-
-
-       </div>
-       <!-- End of second category pictures -->
-
-       <!-- Third Category Pictures -->
-       <div id="category3" class="tab-pane">
-
-         <?php include __DIR__ . '/partials/imagegallery.part.php' ?>
-
-       </div>
-       <!-- Third Category Pictures -->
+       <?php foreach ($categories as $category): ?>
+         <div id="<?= $category['id'] ?>" class="tab-pane <?= $category['isActive'] ? 'active' : '' ?>">
+           <?php include __DIR__ . '/partials/imagegallery.part.php' ?>
+         </div>
+       <?php endforeach; ?>
      </div>
      <!-- End of Navigation Table Content -->
+     
    </div><!-- End of Index-body box -->
+
 
    <!-- Newsletter form -->
    <div class="index-form text-center">

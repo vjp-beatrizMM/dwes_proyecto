@@ -18,5 +18,16 @@ foreach ($imagenes as $imagen) {
           </div>
         </div>
       </div>
+      
     HTML;
 }
+echo <<<HTML
+<nav class="text-center">
+        <ul class="pagination">
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#" aria-label="suivant"><span aria-hidden="true">&raquo;</span></a></li>
+        </ul>
+    </nav>
+HTML;
