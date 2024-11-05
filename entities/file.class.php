@@ -17,7 +17,7 @@
             
             }
 
-            //Verificamos si ha habido un error durante lasubida del fichero
+            //Verificamos si ha habido un error durante la subida del fichero
             if($this->file['error'] !== UPLOAD_ERR_OK){
 
                 //Dentro del if verificamos de que tipo ha sido el error
@@ -30,7 +30,7 @@
                     }
                     case UPLOAD_ERR_PARTIAL:{
 
-                        //Error en la transferencia -subida incomp`leta
+                        //Error en la transferencia -subida incompleta
                         break;
                     }
                     default:{
@@ -41,14 +41,11 @@
                 }
             } 
 
-            //Comporbamos si elfichero subido es de un tipo delos que tenemos soportado
+            //Comporbamos si el fichero subido es de un tipo de los que tenemos soportado
             if(in_array($this->file['type'], $arrTypes)===false){
                 //Error tipo no soportado
             }
         }
-
-        
-
 
         public function getFilename() : string{
             return $this->fileName;

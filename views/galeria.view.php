@@ -1,7 +1,7 @@
 <?php include __DIR__ . '/partials/inicio-doc.part.php' ?>
 
 <!-- Navigation Bar -->
-<?php include __DIR__.'/partials/nav.part.php'?>
+<?php include __DIR__ . '/partials/nav.part.php' ?>
 <!-- End of Navigation Bar -->
 
 <!-- Principal Content Start -->
@@ -13,19 +13,19 @@
 
 			<?php if ($_SERVER['REQUEST_METHOD'] === 'POST'): ?>
 
-				<div class="alert alert - <?=empty($errores)?'info':'danger';?> alert-dismissibre" role="alert">
-                    <button type="button" class="close" data-dimiss="alert" aria-label="Close">
-                        <span aria-hidden="true">x</span>
-                    </button>
+				<div class="alert alert - <?= empty($errores) ? 'info' : 'danger'; ?> alert-dismissibre" role="alert">
+					<button type="button" class="close" data-dimiss="alert" aria-label="Close">
+						<span aria-hidden="true">x</span>
+					</button>
 					<?php if (empty($errores)) : ?>
 						<p> <?= $mensaje ?> </p>
-                    <?php else : ?>
-                        <ul>
-                            <?php foreach ($errores as $error) : ?>
-                                <li> <?= $error ?> </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    <?php endif; ?>
+					<?php else : ?>
+						<ul>
+							<?php foreach ($errores as $error) : ?>
+								<li> <?= $error ?> </li>
+							<?php endforeach; ?>
+						</ul>
+					<?php endif; ?>
 				</div>
 			<?php endif; ?>
 
@@ -46,6 +46,25 @@
 			</form>
 			<hr class="divider">
 			<div class="imagenes_galeria">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Imagen</th>
+							<th scope="col">Visualizaciones</th>
+							<th scope="col">Likes</th>
+							<th scope="col">Descargas</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach ($imagenes as $img): ?>
+					<tr>
+							<th scope="row"></th>
+							<td></td>
+						</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
