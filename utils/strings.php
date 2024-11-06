@@ -4,6 +4,10 @@
 
     define('ERROR_EXECUTE_STATEMENT', 10);
 
+    define('ERROR_APP_CORE', 11);
+
+    define('ERROR_CON_BD', 12);
+
     $errorStrings[UPLOAD_ERR_OK] = "No hay ningún error";
     $errorStrings[UPLOAD_ERR_INI_SIZE] = "El fichero es demasiado grande";
     $errorStrings[UPLOAD_ERR_FORM_SIZE] = "El fichero es demasiado grande";
@@ -15,8 +19,15 @@
     //Personalizados
     $errorStrings[ERROR_MV_UP_FILE] = "No se ha podido mover el archivo al destino";
     $errorStrings[ERROR_EXECUTE_STATEMENT] = "No se ha podido ejecutar la consulta";
+    $errorStrings[ERROR_APP_CORE] = "No se ha encontrado la clave en el contenedor";
+    $errorStrings[ERROR_CON_BD] = "No se ha podido crear la concexión a la BD";
+
 
     define('ERROR_STRINGS', $errorStrings);
 
-
+    function getErrorString($errorCode){
+        return match(true){
+            $errorCode => ERROR_STRINGS[$errorCode]
+        };
+    }
 ?>

@@ -10,14 +10,16 @@
         private $numVisualizaciones;
         private $numLikes;
         private $numDownloads;
+        private $id;
 
-        public function __construct(string $nombre, string $descripcion, int $numVisualizaciones=0, int $numLikes=0, int $numDownloads=0)
+        public function __construct(string $nombre='', string $descripcion='', int $numVisualizaciones=0, int $numLikes=0, int $numDownloads=0)
         {
             $this->nombre = $nombre;
             $this->descripcion = $descripcion;
             $this->numVisualizaciones = $numVisualizaciones;
             $this->numLikes = $numLikes;
             $this->numDownloads = $numDownloads;
+            $this->id = null;
         }
 
         public function getNombre() : string{
@@ -69,6 +71,10 @@
 
         public function getUrlGallery():string{
             return self::rutaImagenesGallery.$this->getNombre();
+        }
+
+        public function getId(){
+            return $this->id;
         }
     }
 

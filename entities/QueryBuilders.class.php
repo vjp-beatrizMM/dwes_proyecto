@@ -1,6 +1,7 @@
 <?php
 require 'utils/strings.php';
 require 'exceptions/QueryException.class.php';
+require 'entities/ImagenGaleria.class.php';
 
 class QueryBuilder
 {
@@ -22,12 +23,12 @@ class QueryBuilder
     public function findAll(string $table, string $classEntity)
     {
         $sqlStatement = "SELECT * from $table";
-
         $pdoStatement = $this->connection->prepare($sqlStatement);
+
         if ($pdoStatement->execute() === false) {
-            throw new QueryException(ERROR_STRINGS(ERROR_EXECUTE_STATEMENT));
+            throw new QueryException(ERROR_STRINGS[ERROR_EXECUTE_STATEMENT]);
         }
 
-        return $pdoStatement->fetchAll(PDO::FETCH_PROPS_LATE)
+        return $pdoStatement->fetchAll(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, $classEntity);
     }
 }
