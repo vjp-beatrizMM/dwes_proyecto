@@ -1,6 +1,6 @@
 <?php
-require __DIR__.'/../exceptions/FileException.class.php';
-require 'utils/strings.php';
+require_once 'exceptions/FileException.class.php';
+require_once 'utils/strings.php';
 class File{
     private $file;
     private $fileName;

@@ -8,6 +8,8 @@
 
     define('ERROR_CON_BD', 12);
 
+    define('ERROR_INS_BD', 13);
+
     $errorStrings[UPLOAD_ERR_OK] = "No hay ningún error";
     $errorStrings[UPLOAD_ERR_INI_SIZE] = "El fichero es demasiado grande";
     $errorStrings[UPLOAD_ERR_FORM_SIZE] = "El fichero es demasiado grande";
@@ -21,13 +23,12 @@
     $errorStrings[ERROR_EXECUTE_STATEMENT] = "No se ha podido ejecutar la consulta";
     $errorStrings[ERROR_APP_CORE] = "No se ha encontrado la clave en el contenedor";
     $errorStrings[ERROR_CON_BD] = "No se ha podido crear la concexión a la BD";
+    $errorStrings[ERROR_INS_BD] = "No se ha podido realizar la inserción el BD";
 
 
     define('ERROR_STRINGS', $errorStrings);
 
     function getErrorString($errorCode){
-        return match(true){
-            $errorCode => ERROR_STRINGS[$errorCode]
-        };
+        return ERROR_STRINGS[$errorCode];
     }
 ?>

@@ -34,6 +34,11 @@
             <i class="fa fa-phone-square sr-icons"></i> Contact
           </a>
         </li>
+        <li class="<?php echo esOpcionMenuActiva("/contact.php") ? "active" : "" ?>">
+          <a href="<?php echo esOpcionMenuActiva("/contact.php") ? "#" : "galeria.php" ?>">
+            <i class="fa fa-phone-square sr-icons"></i> Gallery
+          </a>
+        </li>
       </ul>
     </div>
   </div>

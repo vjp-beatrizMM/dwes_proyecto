@@ -1,6 +1,7 @@
 <?php
+    require_once 'entities/database/IEntity.class.php';
 
-    Class imagenGaleria {
+    Class ImagenGaleria implements IEntity {
 
         const rutaImagenesPortfolio = 'images/index/portfolio/';
         const rutaImagenesGallery = 'images/index/gallery/';
@@ -63,6 +64,17 @@
 
         public function setNumDownloads(int $numDownloads) : void{
             $this->numDownloads = $numDownloads;
+        }
+
+        public function toArray(): array{
+            return [
+                'id' => $this->getId(),
+                'nombre' => $this->getNombre(),
+                'descripcion' => $this->getDescripcion(),
+                'numVisualizaciones' => $this->getNumVisualizaciones(),
+                'numLikes' => $this->getNumLike(),
+                'numDownloads' => $this->getNumDownloads()
+            ];
         }
 
         public function getUrlPortfolio():string{

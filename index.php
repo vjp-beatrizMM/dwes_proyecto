@@ -1,6 +1,6 @@
 <?php
-require "utils/ultis.php";
-require "entities/imagenGaleria.class.php";
+require_once "utils/ultis.php";
+require_once "entities/imagenGaleria.class.php";
 
 // Inicializazamos un array vacío para almacenar los objetos de tipo ImagenGaleria
 $imagenes = [];
