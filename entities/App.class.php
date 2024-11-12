@@ -1,10 +1,11 @@
 <?php
 require_once 'exceptions/AppException.class.php';
+require_once 'utils/strings.php';
     class App {
         /**
          * 
          */
-        private static $container;
+        private static $container = [];
 
         public static function bind($clave, $valor){
             self::$container[$clave]=$valor;
@@ -23,7 +24,7 @@ require_once 'exceptions/AppException.class.php';
             if(!array_key_exists('connection', self::$container)){
                 self::$container['connection']=Connection::make();
             }
-            return self::$container['connection'];
+            return static::$container['connection'];
         }
 
 

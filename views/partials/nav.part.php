@@ -33,10 +33,15 @@
           <a href="<?php echo esOpcionMenuActiva("/contact.php") ? "#" : "contact.php" ?>">
             <i class="fa fa-phone-square sr-icons"></i> Contact
           </a>
-        </li>
-        <li class="<?php echo esOpcionMenuActiva("/contact.php") ? "active" : "" ?>">
-          <a href="<?php echo esOpcionMenuActiva("/contact.php") ? "#" : "galeria.php" ?>">
-            <i class="fa fa-phone-square sr-icons"></i> Gallery
+          <!-- este lo hemos añadido despues-->
+          <li class="<?php echo esOpcionMenuActiva("/galeria.php") ? "active" : "" ?>">
+          <a href="<?php echo esOpcionMenuActiva("/galeria.php") ? "#" : "galeria.php" ?>">
+            <i class="fa fa-image sr-icons"></i> Gallery
+          </a>
+          <!-- este lo hemos añadido despues-->
+          <li class="<?php echo esOpcionMenuActiva("/asociados.php") ? "active" : "" ?>">
+          <a href="<?php echo esOpcionMenuActiva("/asociados.php") ? "#" : "/asociados.php" ?>">
+            <i class="fa fa-hand-o-right sr-icons"></i> Partners
           </a>
         </li>
       </ul>

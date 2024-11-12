@@ -37,6 +37,18 @@
 					</div>
 				</div>
 				<div class="form-group">
+					<div class="col-xs-6">
+						<label class="label-control">Category</label>
+						<select class="form-control-file" name="categoria">
+							<?php foreach ($categorias as $categoria): ?>
+								<option value="<?= $categoria->getId()?>">
+									<?= $categoria->getNombre()?>
+								</option>
+							<?php endforeach?>	
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
 					<div class="col-xs-12">
 						<label class="label-control">Description</label>
 						<textarea class="form-control" name="descripcion"> <?= $descripcion ?> </textarea>
@@ -51,6 +63,7 @@
 						<tr>
 							<th scope="col">#</th>
 							<th scope="col">Imagen</th>
+							<th scope="col">Categoría</th>
 							<th scope="col">Visualizaciones</th>
 							<th scope="col">Likes</th>
 							<th scope="col">Descargas</th>
@@ -66,6 +79,7 @@
 									title="<?= $img->getDescripcion() ?>"
 									width="100px">
 								</td>
+								<td><?=$categorias[$img->getCategoria() -1]->getNombre()?></td>
 								<td><?=$img->getNumVisualizaciones()?></td>
 								<td><?=$img->getNumLike()?></td>
 								<td><?=$img->getNumDownloads()?></td>
