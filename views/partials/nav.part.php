@@ -41,7 +41,7 @@
           <!-- este lo hemos añadido despues-->
           <li class="<?php echo esOpcionMenuActiva("/asociados.php") ? "active" : "" ?>">
           <a href="<?php echo esOpcionMenuActiva("/asociados.php") ? "#" : "/asociados.php" ?>">
-            <i class="fa fa-hand-o-right sr-icons"></i> Partners
+            <i class="fa fa-hand-o-righ"></i> Partners
           </a>
         </li>
       </ul>

@@ -1,6 +1,5 @@
 <?php
     require_once 'entities/database/IEntity.class.php';
-    require_once 'entities/ImagenGaleria.class.php';
 
     Class ImagenGaleria implements IEntity {
 
@@ -38,6 +37,10 @@
             return $this->descripcion;
         }
 
+        public function setDescripcion(string $descripcion) : void{
+            $this->descripcion = $descripcion;
+        }
+
         public function setCategorai(int $categoria) : void{
             $this->categoria = $categoria;
         }
@@ -45,11 +48,6 @@
         public function getCategoria() : int{
             return $this->categoria;
         }
-
-        public function setDescripcion(string $descripcion) : void{
-            $this->descripcion = $descripcion;
-        }
-
         
         public function getNumVisualizaciones() : int{
             return $this->numVisualizaciones;

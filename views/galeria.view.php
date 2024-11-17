@@ -10,9 +10,10 @@
 		<div class="col-xs-12 col-sm-8 col-sm-push-2">
 			<h1>GALERIA</h1>
 			<hr>
-
+			<!--Compruebo a ver si estoy recibiendo los datos del formulario-->
 			<?php if ($_SERVER['REQUEST_METHOD'] === 'POST'): ?>
-
+				<!-- Si he recibido el post, meteré una alerta de tipo info, y en caso-->
+                <!-- contrario muestro una alerta de tipo danger con clases de bootstrap-->
 				<div class="alert alert - <?= empty($errores) ? 'info' : 'danger'; ?> alert-dismissibre" role="alert">
 					<button type="button" class="close" data-dimiss="alert" aria-label="Close">
 						<span aria-hidden="true">x</span>
@@ -91,6 +92,6 @@
 		</div>
 	</div>
 </div>
-<!-- Principal Content Start -->
 
+<!-- Principal Content Start -->
 <?php include __DIR__ . '/partials/fin-doc.part.php' ?>

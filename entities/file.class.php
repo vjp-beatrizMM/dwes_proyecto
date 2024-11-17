@@ -18,9 +18,31 @@ class File{
             throw new FileException(ERROR_STRINGS[UPLOAD_ERR_NO_FILE]);
         }
 
+        if ($this->file['error'] !== UPLOAD_ERR_OK){
+            // switch ($this->file['error']) {
+            //     case UPLOAD_ERR_INI_SIZE:
+            //     case UPLOAD_ERR_FORM_SIZE:{
+            //         throw new FileException('El fichero es demasiado grande');
+            //         break;
+            //     }
+            //     case UPLOAD_ERR_PARTIAL:{
+            //         throw new FileException('No se ha poddo subir el fichero completo');
+            //         break;
+            //     }    
+                
+            //     default:{
+            //         throw new FileException('No se ha podido subir el fichero');
+            //         break;
+            //     }
+                    
+            // }
+            throw new FileException(ERROR_STRINGS[$this->file['error']]);
+        }
+
         //Comprobamos si el fichero subido es de un tipo de los quetenemos soportados
         if (in_array($this->file['type'], $arrTypes) === false) {
             //Error, tipo no soportado
+
             throw new FileException(ERROR_STRINGS[UPLOAD_ERR_EXTENSION]);
             
         }
@@ -70,6 +92,7 @@ class File{
     public function copyFile (string $rutaOrigen,string $rutaDestino){
         $origen = $rutaOrigen.$this->fileName;
         $destino = $rutaDestino.$this->fileName;
+        
         // Verifica que el archivo de origen exista
         if(is_file($origen)==false){
             throw new FileException("No existe el fichero $origen que intentas copiar");
