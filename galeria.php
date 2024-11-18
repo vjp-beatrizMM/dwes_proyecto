@@ -1,10 +1,10 @@
 <?php 
-    require 'utils/utils.php';
-    require 'entities/File.class.php';
-    require 'entities/ImagenGaleria.class.php';
-    require 'entities/Connection.class.php';
-    require 'entities/QueryBuilder.class.php';
-    require 'exceptions/AppException.class.php';
+    require_once 'utils/ultis.php';
+    require_once 'entities/File.class.php';
+    require_once 'entities/ImagenGaleria.class.php';
+    require_once 'entities/Connection.class.php';
+    require_once 'entities/QueryBuilders.class.php';
+    require_once 'exceptions/AppException.class.php';
     require_once 'entities/repository/imagenGaleriaRepositorio.class.php';
     require_once 'entities/repository/categoriaRepositorio.class.php';
 
@@ -32,7 +32,7 @@
             
                 $descripcion = trim(htmlspecialchars($_POST['descripcion']));
                 
-                $categoria = intval(trim(htmlspecialchars($_POST['categoria'])));
+                $categoria = trim(htmlspecialchars($_POST['categoria']));
 
                 $tiposAceptados = ['image/jpeg','image/jpg','image/gif','image/png'];
                 $imagen = new File('imagen',$tiposAceptados);
