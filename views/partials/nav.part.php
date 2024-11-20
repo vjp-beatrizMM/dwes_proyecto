@@ -29,12 +29,12 @@
             <i class="fa fa-file-text sr-icons"></i> Blog
           </a>
         </li>
-        <li class="<?php echo esOpcionMenuActiva("/contact.php") ? "active" : "" ?>">
+        <li class="<?php echo esOpcionMenuActiva("/contact.php") ? "active" : "" ?> lien">
           <a href="<?php echo esOpcionMenuActiva("/contact.php") ? "#" : "contact.php" ?>">
             <i class="fa fa-phone-square sr-icons"></i> Contact
           </a>
           <!-- este lo hemos añadido despues-->
-          <li class="<?php echo esOpcionMenuActiva("/galeria.php") ? "active" : "" ?>">
+          <li class="<?php echo esOpcionMenuActiva("/galeria.php") ? "active" : "" ?> lien">
           <a href="<?php echo esOpcionMenuActiva("/galeria.php") ? "#" : "galeria.php" ?>">
             <i class="fa fa-image sr-icons"></i> Gallery
           </a>
