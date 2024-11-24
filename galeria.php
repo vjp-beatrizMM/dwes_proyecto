@@ -1,8 +1,9 @@
 <?php 
     require_once 'utils/ultis.php';
-    require_once 'entities/File.class.php';
-    require_once 'entities/ImagenGaleria.class.php';
-    require_once 'entities/Connection.class.php';
+    require_once 'entities/file.class.php';
+    require_once 'entities/imagenGaleria.class.php';
+    require_once 'exceptions/FileException.class.php';
+    require_once 'entities/connection.class.php';
     require_once 'entities/QueryBuilders.class.php';
     require_once 'exceptions/AppException.class.php';
     require_once 'entities/repository/imagenGaleriaRepositorio.class.php';
@@ -39,8 +40,8 @@
 
                 
 
-                $imagen -> saveUploadFile(ImagenGaleria::rutaImagenesGallery);
-                $imagen -> copyFile(ImagenGaleria::rutaImagenesGallery, ImagenGaleria::rutaImagenesPortfolio);
+                $imagen -> saveUploadFile(ImagenGaleria::RUTA_IMAGENES_GALLERY);
+                $imagen -> copyFile(ImagenGaleria::RUTA_IMAGENES_GALLERY, ImagenGaleria::RUTA_IMAGENES_PORTAFOLIO);
 
                 $imagenGaleria = new ImagenGaleria($imagen->getFileName(), $descripcion, categoria: $categoria);
                 $imagenRepository->save($imagenGaleria);
@@ -83,5 +84,5 @@
         $imagenes = $imagenRepository->findAll();
         $categorias = $categoriaRepositorio->findAll();
     }
-    require 'views/galery.view.php';
+    require 'views/galeria.view.php';
 ?>

@@ -1,15 +1,15 @@
 <?php
 require_once 'entities/database/IEntity.class.php';
 
+//Creamos la clase categoría con la implementación de la intefaz IEntity
 class Categoria implements IEntity
 {
-    //Atrubutos
+    //Atributos
     private $id;
     private $nombre;
     private $numImagenes;
 
-    //Constructor
-
+    //Constructor, inicializamos los atributos con valores por defecto
     public function __construct(string $nombre = '', int $numImagenes = 0)
     {
         $this->nombre = $nombre;
@@ -18,7 +18,7 @@ class Categoria implements IEntity
 
 
     /**
-     * Get the value of descripcion
+     * Get the value of nombre
      */
     public function getNombre()
     {
@@ -26,7 +26,7 @@ class Categoria implements IEntity
     }
 
     /**
-     * Set the value of descripcion
+     * Set the value of nombre
      *
      * @return  self
      */
@@ -38,7 +38,7 @@ class Categoria implements IEntity
     }
 
     /**
-     * Get the value of nombre
+     * Get the value of NumImagenes
      */
     public function getNumImagenes()
     {
@@ -46,34 +46,43 @@ class Categoria implements IEntity
     }
 
     /**
-     * Set the value of nombre
-     *
+     * Set the value of NumImagenes
      * @return  self
      */
     public function setNumImagenes(int $numImagenes)
     {
         $this->numImagenes = $numImagenes;
+        return $this;
+    }
+
+    /**
+     * Get the value of id
+     */ 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     * @return  self
+     */ 
+    public function setId($id)
+    {
+        $this->id = $id;
 
         return $this;
     }
 
-    public function getId(){
-        return $this->id;
-    }
-
-    public function setId($id)
-    {
-            $this->id = $id;
-
-            return $this;
-    }
-
+    //
     public function toArray(): array
     {
         return [
-            'id'=> $this->getId(),
-            'nombre'=> $this->getNombre(),
-            'numImagenes'=> $this->getNumImagenes()
+            'id'=>$this->getId(),
+            'nombre'=>$this->getNombre(),
+            'numImagenes'=>$this->getNumImagenes()
         ];
     }
 }
+
+?>

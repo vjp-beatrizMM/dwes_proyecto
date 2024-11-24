@@ -4,28 +4,19 @@ require_once 'utils/strings.php';
 require_once 'entities/App.class.php';
 require_once 'entities/Categoria.class.php';
 
-abstract class QueryBuilder
-{
+abstract class QueryBuilder{
+
     /**
      * @var PDO
      */
     private $connection;
-
-    /**
-     * @var string
-     */
     private $table;
-
-    /**
-     * @var string
-     */
     private $classEntity;
-
 
     /**
      * @param PDO $connection
      */
-    public function __construct(string $table, string $classEntity)
+    public function __construct($table, $classEntity)
     {
         $this->connection = App::getConnection();
         $this->table = $table;
@@ -33,12 +24,9 @@ abstract class QueryBuilder
     }
 
 
-    public function findAll(): array
-    {
+    public function findAll(){
 
         $sqlStatement = "Select * from $this->table";
-        // mejor prepare para evitar que metan codigo sql
-
         $pdoStatement = $this->connection->prepare($sqlStatement);
 
         if ($pdoStatement->execute() === false) {
@@ -74,10 +62,14 @@ abstract class QueryBuilder
                 implode(', ', array_keys($parameters)),
                 ':' . implode(',:', array_keys($parameters))
             );
-
-
             $statement = $this->connection->prepare($sql);
             $statement->execute($parameters);
+
+            if($entity instanceof ImagenGaleria){
+                $this->incrementaNumCategoria($entity->getCategoria());
+            }
+    
+
         } catch (PDOException $exception) {
             // throw new QueryException(ERROR_STRINGS[ERROR_INSERT_BD]);
             die($exception->getMessage());
