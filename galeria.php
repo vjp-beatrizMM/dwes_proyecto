@@ -1,13 +1,13 @@
 <?php 
     require_once 'utils/ultis.php';
-    require_once 'entities/file.class.php';
-    require_once 'entities/imagenGaleria.class.php';
+    require_once 'entities/File.class.php';
+    require_once 'entities/ImagenGaleria.class.php';
     require_once 'exceptions/FileException.class.php';
-    require_once 'entities/connection.class.php';
+    require_once 'entities/Connection.class.php';
     require_once 'entities/QueryBuilders.class.php';
     require_once 'exceptions/AppException.class.php';
-    require_once 'entities/repository/imagenGaleriaRepositorio.class.php';
-    require_once 'entities/repository/categoriaRepositorio.class.php';
+    require_once 'entities/repository/ImagenGaleriaRepositorio.class.php';
+    require_once 'entities/repository/CategoriaRepositorio.class.php';
 
 
     $errores = [];
@@ -25,7 +25,7 @@
         //$connection = App::getConnection();
 
         $imagenRepository = new ImagenGaleriaRepositorio();
-        $categoriaRepositorio = new categoriaRepositorio();
+        $categoriaRepositorio = new CategoriaRepositorio();
         //$queryBuilder = new QueryBuilder('imagenes','ImagenGaleria');
         
 
@@ -36,7 +36,7 @@
                 $categoria = trim(htmlspecialchars($_POST['categoria']));
 
                 $tiposAceptados = ['image/jpeg','image/jpg','image/gif','image/png'];
-                $imagen = new File('imagen',$tiposAceptados);
+                $imagen = new File('imagen', $tiposAceptados);
 
                 
 

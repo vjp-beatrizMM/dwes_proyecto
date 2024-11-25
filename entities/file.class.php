@@ -1,7 +1,7 @@
 <?php
 require_once 'exceptions/FileException.class.php';
 require_once 'utils/strings.php';
-class File{
+class File {
     private $file;
     private $fileName;
 

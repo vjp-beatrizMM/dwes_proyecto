@@ -162,7 +162,7 @@ class ImagenGaleria implements IEntity
         ];
     }
 
-    //Función pra generar la URL de las imágenes en el portfolio
+    //Función para generar la URL de las imágenes en el portfolio
     public function getUrlPortfolio(): string
     {
         return self::RUTA_IMAGENES_PORTAFOLIO . $this->getNombre();
