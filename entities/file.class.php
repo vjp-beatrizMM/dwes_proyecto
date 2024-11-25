@@ -2,13 +2,18 @@
 require_once 'exceptions/FileException.class.php';
 require_once 'utils/strings.php';
 class File {
-    private $file;
-    private $fileName;
+    private $file; //Fichero que se subirá al servidor, contendrá los atributos guardados en la variable global $_FILES
+    private $fileName; //Nombre del fichero a la subida
 
+    /**
+     * @param $fileName nombre del fichero
+     * @param $arrTypes array con los tipos de ficheros aceptados
+     * @throws FileException
+     */
     public function __construct(string $fileName, array $arrTypes)
     {
 
-        $this->file = $_FILES[$fileName]; //Obtenemos el nombre del archivo a través de la variable global $_FILES que contiene
+        $this->file = $_FILES[$fileName]; //Obtenemos el nombre del archivo a través de la variable global $_FILES (la clave es el atributo name)
         $this->fileName = ''; //Asiganamos string vacío para posteriormente almacenar el nombre del archivo
 
         //Comprobamos que el array $_FILES contiene el fichero
@@ -18,10 +23,11 @@ class File {
             throw new FileException(ERROR_STRINGS[UPLOAD_ERR_NO_FILE]);
         }
 
-        //Si el valor en $this->file['error'] no es UPLOAD_ERR_OK (No hay ningún error), se lanza una excepción.
+        //Si el valor en $this->file['error'] no es UPLOAD_ERR_OK (No hay ningún error), esq que ha habido algún problema, se lanza una excepción.
         if ($this->file['error'] !== UPLOAD_ERR_OK){
 
             throw new FileException(ERROR_STRINGS[$this->file['error']]);
+
             // switch ($this->file['error']) {
             //     case UPLOAD_ERR_INI_SIZE:
             //     case UPLOAD_ERR_FORM_SIZE:{
@@ -31,13 +37,11 @@ class File {
             //     case UPLOAD_ERR_PARTIAL:{
             //         throw new FileException('No se ha poddo subir el fichero completo');
             //         break;
-            //     }    
-                
+            //     }       
             //     default:{
             //         throw new FileException('No se ha podido subir el fichero');
             //         break;
             //     }
-                    
             // }
         }
 
@@ -64,6 +68,7 @@ class File {
     public function saveUploadFile(string $rutaDestino) {
 
         // Verifica que el archivo haya sido subido mediante una solicitud POST
+        // No se puede usar el método GET para enviar ficheros
         if (!is_uploaded_file($this->file['tmp_name'])) {
 
             //Si no, manda un error
@@ -111,7 +116,7 @@ class File {
         $destino = $rutaDestino.$this->fileName;
         
         //Comprobamos si el archivo de origen existe
-        if(is_file($origen)==false){
+        if(is_file($origen) === false){
 
             //Si no, lanza una excepción
             throw new FileException("No existe el fichero $origen que intentas copiar");
@@ -119,15 +124,15 @@ class File {
 
 
         //Verificamos si el archivo de destino ya existe para evitar sobeescrituras
-        if(is_file($destino)==true){
+        if(is_file($destino) === true){
 
             //Si existe, lanza una excepción
             throw new FileException("El fichero $destino ya existe y no se puede sobreescribir");
         }
 
 
-        //Usamos la funcion copy para realizar al copia del archivo de origen al destino
-        if(copy($origen, $destino) == false){
+        //Usamos la funcion copy para realizar la copia del archivo de origen al destino
+        if(copy($origen, $destino) === false){
 
             //Si falla, lanza una excepción.
             throw new FileException("No se ha podido copiar el fichero $origen a $destino");

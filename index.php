@@ -1,6 +1,9 @@
 <?php
 require_once "utils/ultis.php";
 require_once "entities/ImagenGaleria.class.php";
+require_once "entities/Partner.class.php";
+
+//PARTE GALERÍA
 
 // Inicializazamos un array vacío para almacenar los objetos de tipo ImagenGaleria
 $imagenes = [];
@@ -25,5 +28,29 @@ for ($i = 1; $i <= 12; $i++) {
 // echo '<pre>';
 // print_r($imagenes);
 // echo '</pre>';
+
+
+//PARTE ASOCIADOS
+
+//Inicializamos array vacio para almacenar los asociados
+$arrayPartners = [];
+$contador = 1;
+
+// Generamos 6 partners con un bucle for
+for ($i = 1; $i <= 6; $i++) {
+    $asociados[] = new Partner(
+        'Partner ' . $i, // Nombre dinámico
+        "log" . $contador . ".jpg", // Ruta del logo dinámica
+        "Descripción " . $i // Descripción dinámica
+    );
+    // Ajustamos el contador para las imágenes
+    if ($contador >= 3) {
+        $contador = 1; // Reiniciar contador después de 3
+    } else {
+        $contador++;
+    }
+}
+
+$sociosSeleccionados = getRandomPartners($asociados);
 
 require "views/index.views.php";

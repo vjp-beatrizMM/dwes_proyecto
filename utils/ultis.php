@@ -25,9 +25,18 @@ function existeOpcionMenuActivaEnArray(array $opciones): bool
 }
 
 
-//Función para extraer 3 partners de un array y los devuelve
-function extractorPartners(array $partners): array
-{
-    shuffle($partners);
-    return array_slice($partners, 0, 3);
+/**
+ * Comprueba la cantidad de asociados en el array, si son tres o menos, los muestra
+ * Si son más, los mezcla aleatoriamente y nos muestra tres
+ * @param [array] $asociados
+ * @return void
+ */
+function getRandomPartners(array $asociados, int $max = 3): array {
+    //Si el array contiene tres o menso asociados, nos los devuelve
+    if (count($asociados) <= $max) {
+        return $asociados;
+    }
+    // En caso contrario, los mezcla y devuelve tres
+    shuffle($asociados); // Mezcla aleatoria
+    return array_slice($asociados, 0, $max); // Toma los primeros $max elementos
 }

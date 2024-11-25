@@ -1,13 +1,10 @@
 <?php
 
+    // Nos definimos las constantes con los errores.
     define('ERROR_MV_UP_FILE', 9);
-
     define('ERROR_EXECUTE_STATEMENT', 10);
-
     define('ERROR_APP_CORE', 11);
-
     define('ERROR_CON_BD', 12);
-
     define('ERROR_INS_BD', 13);
 
     $errorStrings[UPLOAD_ERR_OK] = "No hay ningún error";

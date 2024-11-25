@@ -9,7 +9,7 @@
     require_once 'entities/repository/ImagenGaleriaRepositorio.class.php';
     require_once 'entities/repository/CategoriaRepositorio.class.php';
 
-
+    // Definimos el array de errores y las varibles que utilizaremos en galeria.view
     $errores = [];
     $descripcion = '';
     $mensaje = '';
@@ -29,7 +29,7 @@
         //$queryBuilder = new QueryBuilder('imagenes','ImagenGaleria');
         
 
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){ 
             
                 $descripcion = trim(htmlspecialchars($_POST['descripcion']));
                 
@@ -38,8 +38,7 @@
                 $tiposAceptados = ['image/jpeg','image/jpg','image/gif','image/png'];
                 $imagen = new File('imagen', $tiposAceptados);
 
-                
-
+        
                 $imagen -> saveUploadFile(ImagenGaleria::RUTA_IMAGENES_GALLERY);
                 $imagen -> copyFile(ImagenGaleria::RUTA_IMAGENES_GALLERY, ImagenGaleria::RUTA_IMAGENES_PORTAFOLIO);
 
