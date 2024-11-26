@@ -4,6 +4,7 @@ require_once "entities/ImagenGaleria.class.php";
 require_once "entities/Partner.class.php";
 require_once "entities/Connection.class.php";
 require_once "entities/repository/ImagenGaleriaRepositorio.class.php";
+require_once 'entities/repository/AsociadoRepositorio.class.php';
 
 //PARTE GALERÍA
 
@@ -31,6 +32,7 @@ require_once "entities/repository/ImagenGaleriaRepositorio.class.php";
 //
 
 $imagenes = [];
+$asociados = [];
 
 try{
     $config=require_once'app/config.php';
@@ -38,8 +40,9 @@ try{
     App::bind('config',$config);
   
     $imagenRepositorio= new ImagenGaleriaRepositorio();
-  }
-  catch (FileException $exception) {
+    $asociadosRepositorio = new AsociadoRepositorio();
+
+  }catch (FileException $exception) {
     $errores[] = $exception->getMessage();
     //guardo en un array los errores
   }catch (QueryException $exception) {
@@ -53,32 +56,32 @@ try{
   }
   finally{
     
-        $imagenes = $imagenRepositorio->findAll();
-  
+    $imagenes = $imagenRepositorio->findAll();
+    $asociados = $asociadosRepositorio->findAll();
+    $sociosSeleccionados = getRandomPartners($asociados);
   }
 
 
 //PARTE ASOCIADOS
 
 //Inicializamos array vacio para almacenar los asociados
-$arrayPartners = [];
-$contador = 1;
+// $arrayPartners = [];
+// $contador = 1;
 
-// Generamos 6 partners con un bucle for
-for ($i = 1; $i <= 6; $i++) {
-    $asociados[] = new Partner(
-        'Partner ' . $i, // Nombre dinámico
-        "log" . $contador . ".jpg", // Ruta del logo dinámica
-        "Descripción " . $i // Descripción dinámica
-    );
-    // Ajustamos el contador para las imágenes
-    if ($contador >= 3) {
-        $contador = 1; // Reiniciar contador después de 3
-    } else {
-        $contador++;
-    }
-}
+// // Generamos 6 partners con un bucle for
+// for ($i = 1; $i <= 6; $i++) {
+//     $asociados[] = new Partner(
+//         'Partner ' . $i, // Nombre dinámico
+//         "log" . $contador . ".jpg", // Ruta del logo dinámica
+//         "Descripción " . $i // Descripción dinámica
+//     );
+//     // Ajustamos el contador para las imágenes
+//     if ($contador >= 3) {
+//         $contador = 1; // Reiniciar contador después de 3
+//     } else {
+//         $contador++;
+//     }
+// }
 
-$sociosSeleccionados = getRandomPartners($asociados);
 
 require "views/index.views.php";

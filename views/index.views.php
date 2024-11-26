@@ -82,7 +82,7 @@
    <!-- Fin del formulario de suscripción -->
 
    <!-- Sección con socios y sus logotipos -->
-   <?php include __DIR__ . '/partials/partners.php' ?>
+   <?php include __DIR__ . '/partials/partners.part.php' ?>
    <!-- Fin de la sección de socios -->
 
  </div><!-- Fin del índice -->

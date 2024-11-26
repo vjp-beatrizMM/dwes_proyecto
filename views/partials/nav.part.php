@@ -53,8 +53,8 @@
           </a>
         </li>
         <!-- Opción del menú: Socios (añadida después) -->
-        <li class="<?php echo esOpcionMenuActiva("/asociados.php") ? "active" : "" ?>">
-          <a href="<?php echo esOpcionMenuActiva("/asociados.php") ? "#" : "/asociados.php" ?>">
+        <li class="<?php echo esOpcionMenuActiva("/partners.php") ? "active" : "" ?>">
+          <a href="<?php echo esOpcionMenuActiva("/partners.php") ? "#" : "partners.php" ?>">
             <i class="fa fa-hand-o-right"></i> Partners
           </a>
         </li>

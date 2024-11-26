@@ -3,9 +3,9 @@
 require_once 'database/IEntity.class.php';
 
 class Partner implements IEntity {
-
-    //Definimos consante con la ruta de las imágenes
-    const RUTA_IMAGENES_GALLERY = 'images/index/gallery/';
+    
+    //Definimos consante para la ruta de los logos, tiene que acabar en / para que funcione con el método saveUploadFile
+    const RUTA_LOGOS = 'images/logo/';
 
     //Definimos las variables de la clase
     private $nombre;
@@ -40,7 +40,7 @@ class Partner implements IEntity {
      * Get the value of UrlLogo
      */
     public function getUrlLogo() {
-        return self::RUTA_IMAGENES_GALLERY . $this->logo;
+        return self::RUTA_LOGOS . $this->getLogo();
     }
 
     /**

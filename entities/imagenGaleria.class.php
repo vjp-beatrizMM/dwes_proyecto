@@ -5,7 +5,7 @@ class ImagenGaleria implements IEntity
 {
 
     //Declaramos constantes con las rutas de las imágenes
-    const RUTA_IMAGENES_PORTAFOLIO = 'images/index/portfolio/';
+    const RUTA_IMAGENES_PORTFOLIO = 'images/index/portfolio/';
     const RUTA_IMAGENES_GALLERY = 'images/index/gallery/';
 
     //Declaramos atributos de la clase, relacionados con las imágenes
@@ -165,7 +165,7 @@ class ImagenGaleria implements IEntity
     //Función para generar la URL de las imágenes en el portfolio
     public function getUrlPortfolio(): string
     {
-        return self::RUTA_IMAGENES_PORTAFOLIO . $this->getNombre();
+        return self::RUTA_IMAGENES_PORTFOLIO . $this->getNombre();
     }
 
     //Función pra generar la URL de las imágenes en la galería
