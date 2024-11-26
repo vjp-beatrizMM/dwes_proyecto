@@ -130,7 +130,7 @@ abstract class QueryBuilder {
     /**
      * Ejecuta múltiples consultas dentro de una transacción.
      * 
-     * @param callable $fnExecuteQueries Función que contiene las consultas a ejecutar.
+     * @param callable $fnExecuteQueries Función que contiene las consultas a ejecutar. O se ejecutan todas, o ninguna
      * @throws PDOException Si ocurre un error durante la transacción.
      */
     public function executeTransaction(callable $fnExecuteQueries) {
@@ -144,6 +144,7 @@ abstract class QueryBuilder {
             // Confirma la transacción.
             $this->connection->commit();
         } catch (PDOException $pdoException) {
+            $this->connection->rollBack(); // Deshace todos los cambios 
             // Lanza la excepción original si ocurre un error.
             throw new PDOException($pdoException->getMessage());
         }
