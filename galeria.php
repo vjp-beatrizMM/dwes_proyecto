@@ -24,11 +24,12 @@
         //Podemos obtener la conexion llamando al método getConection
         //$connection = App::getConnection();
 
+        // $queryBuilder = new QueryBuilder('imagenes','ImagenGaleria'); Ya no podemos crearlos por el abstract, lo haremos desde Repository
+        // $imagenes = $queryBuilder->findAll();
         $imagenRepository = new ImagenGaleriaRepositorio();
-        $categoriaRepositorio = new CategoriaRepositorio();
-        //$queryBuilder = new QueryBuilder('imagenes','ImagenGaleria');
-        
 
+        $categoriaRepositorio = new CategoriaRepositorio();
+        
         if($_SERVER['REQUEST_METHOD'] === 'POST'){ 
             
                 $descripcion = trim(htmlspecialchars($_POST['descripcion']));
@@ -41,11 +42,6 @@
         
                 $imagen -> saveUploadFile(ImagenGaleria::RUTA_IMAGENES_GALLERY);
                 $imagen -> copyFile(ImagenGaleria::RUTA_IMAGENES_GALLERY, ImagenGaleria::RUTA_IMAGENES_PORTAFOLIO);
-
-                $imagenGaleria = new ImagenGaleria($imagen->getFileName(), $descripcion, categoria: $categoria);
-                $imagenRepository->save($imagenGaleria);
-                $descripcion = "";
-                $mensaje = 'Imagen guardada';
 
                 //Si llega hasta aqui, es que no ha habido errores y se ha subido la imagen
                 // $sql = "INSERT INTO imagenes (nombre,descripcion) VALUES (:nombre,:descripcion)";
@@ -62,11 +58,14 @@
 
                 // $querySQL = 'Select * from imagenes';
                 // $queryStatement = $connection->query($querySQL);
+
+                $imagenGaleria = new ImagenGaleria($imagen->getFileName(), $descripcion, categoria: $categoria);
+                $imagenRepository->save($imagenGaleria);
+                $descripcion = ""; // Reiniciamos la variables para que no aparezca rellena en el formulario
+                $mensaje = 'Imagen guardada';
                 
             } 
 
-        // $queryBuilder = new QueryBuilder('imagenes','ImagenGaleria');
-        // $imagenes = $queryBuilder->findAll();
     }
     catch (FileException $exception) {
             $errores[] = $exception->getMessage();

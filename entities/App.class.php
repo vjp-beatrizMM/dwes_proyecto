@@ -1,11 +1,14 @@
 <?php
 require_once 'exceptions/AppException.class.php';
 require_once 'utils/strings.php';
+
+    // Inyección de dependencias, no crearemos el objeto, solicitaremos al contenedor que nos devuelva el que necesitamos
     class App {
+
         /**
-         * 
+         * Creamos un array para almacenar los valores para la conexión de la BBDD
          */
-        private static $container = []; //Creamos un array para almacenar los valores para la conexión de la BBDD
+        private static $container = [];
 
 
         //Uso: App::bind('config', ['db_name' => 'mi_base_de_datos', 'user' => 'root']);

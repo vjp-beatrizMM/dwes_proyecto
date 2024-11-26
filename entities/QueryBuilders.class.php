@@ -6,7 +6,7 @@ require_once 'entities/Categoria.class.php';
 
 /**
  * Clase abstracta QueryBuilder
- * Proporciona una abstracción genérica para realizar operaciones CRUD en una base de datos.
+ * Proporciona una abstracción genérica para realizar operaciones CRUD en una base de datos (no se podrá crear objetos de este tipo).
  * Está diseñada para ser extendida por clases específicas.
  */
 abstract class QueryBuilder {
@@ -94,7 +94,6 @@ abstract class QueryBuilder {
 
     /**
      * Inserta una nueva entidad en la base de datos.
-     * 
      * @param IEntity $entity Entidad que se va a guardar.
      * @throws PDOException Si ocurre un error al ejecutar la consulta.
      */
