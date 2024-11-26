@@ -13,7 +13,7 @@
 			<p>Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
 
 			<!-- Mensaje de confirmación cuando no hay errores y el formulario ha sido enviado correctamente -->
-			<?php if (isset($errores) && empty($errores) && empty($errorEmail)): ?>
+			<?php if (isset($erroresForm) && empty($erroresForm) && empty($errorEmail)): ?>
 				<div class="alert alert-info">
 					<?php 
 						// Muestra los datos enviados por el usuario
@@ -25,11 +25,11 @@
 			<?php endif; ?>
 
 			<!-- Mensaje de error cuando hay errores de validación en el formulario -->
-			<?php if (isset($errores) && !empty($errores)): ?>
+			<?php if (isset($erroresForm) && !empty($erroresForm)): ?>
 				<div class="alert alert-danger">
 					<?php 
 						// Muestra los errores encontrados en el formulario
-						foreach ($errores as $error) {
+						foreach ($erroresForm as $error) {
 							echo "$error <br>";
 						}
 					?>

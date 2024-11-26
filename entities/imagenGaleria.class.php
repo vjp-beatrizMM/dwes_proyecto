@@ -67,7 +67,7 @@ class ImagenGaleria implements IEntity
      * Set the value of categoria
      * @return  self
      */ 
-    public function setCategorai(int $categoria): void
+    public function setCategoria(int $categoria): void
     {
         $this->categoria = $categoria;
     }
