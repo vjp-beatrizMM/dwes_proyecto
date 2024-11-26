@@ -28,6 +28,7 @@
         // $imagenes = $queryBuilder->findAll();
         $imagenRepository = new ImagenGaleriaRepositorio();
 
+        // Creamos un objeto del tipo CategoriaRepositorio
         $categoriaRepositorio = new CategoriaRepositorio();
         
         if($_SERVER['REQUEST_METHOD'] === 'POST'){ 
@@ -80,6 +81,7 @@
         //$queryBuilder = new QueryBuilder('imagenes','ImagenGaleria');
         
         $imagenes = $imagenRepository->findAll();
+        // Rellenamos el array de categorías
         $categorias = $categoriaRepositorio->findAll();
     }
     require 'views/galeria.view.php';

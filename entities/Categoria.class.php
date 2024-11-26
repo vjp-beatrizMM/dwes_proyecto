@@ -74,7 +74,7 @@ class Categoria implements IEntity
         return $this;
     }
 
-    //
+    // Array cuyo índice son los nombres de los atributos, y el valor los get de cada atributo
     public function toArray(): array
     {
         return [
