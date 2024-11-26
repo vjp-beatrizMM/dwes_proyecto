@@ -30,7 +30,7 @@ abstract class QueryBuilder {
      * Constructor de QueryBuilder.
      * 
      * @param string $table Nombre de la tabla.
-     * @param string $classEntity Clase de la entidad asociada.
+     * @param string $classEntity Clase de la cual queremos extraer los datos.
      */
     public function __construct($table, $classEntity)
     {
@@ -42,9 +42,8 @@ abstract class QueryBuilder {
 
     /**
      * Obtiene todos los registros de la tabla.
-     * 
      * @return array Conjunto de resultados mapeados como objetos de la clase especificada.
-     * @throws QueryException Si la consulta falla.
+     * @throws QueryException Si la consulta falla. QueryException.class.php
      */
     public function findAll() {
         // Consulta SQL para obtener todos los registros de la tabla.
@@ -59,7 +58,10 @@ abstract class QueryBuilder {
             throw new QueryException(getErrorString(ERROR_EXECUTE_STATEMENT));
         }
 
-        // Devuelve los resultados mapeados a la clase de entidad.
+        // Devuelve los resultados obtenidos al ejecutar la consulta
+        // mediante el fetchAll modificamos los datos
+        //FETCH_CLASS - devuelve un objeto de la clase indicada
+        //FETCH_PROPS_LATE - Hará que se llame al constructor antes de cargar la propiedades
         return $pdoStatement->fetchAll(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, $this->classEntity);
     }
 
