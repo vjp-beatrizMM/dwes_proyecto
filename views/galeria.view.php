@@ -87,7 +87,7 @@
 									<img src="<?= $img->getUrlGallery() ?>" 
 									alt="<?= $img->getDescripcion() ?>" 
 									title="<?= $img->getDescripcion() ?>"
-									width="100px"> <!-- Muestra la miniatura de la imagen -->
+									width="50px"> <!-- Muestra la miniatura de la imagen -->
 								</td>
 								<td><?=$categorias[$img->getCategoria() - 1]->getNombre()?></td> <!-- Muestra la categoría de la imagen -->
 								<td><?=$img->getNumVisualizaciones()?></td> <!-- Muestra el número de visualizaciones -->
