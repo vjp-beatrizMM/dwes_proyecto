@@ -21,7 +21,7 @@ class Message implements IEntity
         $this->asunto = $asunto;
         $this->email = $email;
         $this->texto = $texto;
-        $this->fecha = date("Y-m-d"); 
+        $this->fecha = new DateTime(); 
         $this->id = null;
     }
 
@@ -154,7 +154,7 @@ class Message implements IEntity
             'asunto' => $this->getAsunto(),
             'email' => $this->getEmail(),
             'texto' => $this->getTexto(),
-            'fecha' => $this->getFecha()
+            'fecha' => $this->getFecha()->format('Y-m-d H:i:s')
         ];
     }
 
