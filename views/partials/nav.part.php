@@ -14,7 +14,7 @@
       </button>
       <!-- Enlace al inicio de la página (logo) -->
       <a class="navbar-brand page-scroll" href="#page-top">
-        <span>[PHOTO]</span>
+        <span>DWES BeatrizMM</span>
       </a>
     </div>
     <!-- Fin de la cabecera de la barra -->

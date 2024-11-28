@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-11-2024 a las 19:05:50
+-- Tiempo de generación: 28-11-2024 a las 13:36:22
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -34,6 +34,14 @@ CREATE TABLE `asociados` (
   `descripcion` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `asociados`
+--
+
+INSERT INTO `asociados` (`id`, `nombre`, `logo`, `descripcion`) VALUES
+(7, 'nananaiana', 'IMG_20190515_130541.jpg', 'nanai'),
+(8, 'Bea', 'DSCN0110.JPG', 'paloma');
+
 -- --------------------------------------------------------
 
 --
@@ -51,9 +59,9 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`id`, `nombre`, `numImagenes`) VALUES
-(1, 'Categoría 1', 7),
-(2, 'Categoría 2', 1),
-(3, 'Categoría 3', 0);
+(1, 'Categoría 1', 13),
+(2, 'Categoría 2', 6),
+(3, 'Categoría 3', 4);
 
 -- --------------------------------------------------------
 
@@ -76,14 +84,13 @@ CREATE TABLE `imagenes` (
 --
 
 INSERT INTO `imagenes` (`id`, `nombre`, `descripcion`, `numVisualizaciones`, `numLikes`, `numDownloads`, `categoria`) VALUES
-(28, 'lorem-ipsum2_1.jpg', 'sdfsdfsdf', 0, 0, 0, 1),
-(29, 'lorem-ipsum2_2.jpg', 'ersftert', 0, 0, 0, 1),
-(30, 'lorem-ipsum2_3.jpg', 'ersftert', 0, 0, 0, 1),
-(31, 'lorem-ipsum2_4.jpg', 'ersftert', 0, 0, 0, 1),
-(32, 'IMG_20190607_183633.jpg', 'camion', 0, 0, 0, 1),
-(33, 'IMG_20190611_130250.jpg', 'baseball', 0, 0, 0, 2),
 (34, 'IMG_20190805_120817_1.jpg', 'tiburon', 0, 0, 0, 1),
-(35, 'IMG_20190828_195500.jpg', 'viña', 0, 0, 0, 1);
+(36, 'IMG_20190527_204405.jpg', 'Perrete', 0, 0, 0, 2),
+(38, 'IMG_20190625_143945.jpg', 'Fuente', 0, 0, 0, 2),
+(39, 'IMG_20190611_130250.jpg', 'Baseball', 0, 0, 0, 1),
+(41, 'IMG_20190610_162726.jpg', 'dino', 0, 0, 0, 3),
+(47, 'IMG_20190504_121550.jpg', 'casa', 0, 0, 0, 1),
+(48, 'IMG_20190527_204525.jpg', 'perrete2', 0, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -138,7 +145,7 @@ ALTER TABLE `mensajes`
 -- AUTO_INCREMENT de la tabla `asociados`
 --
 ALTER TABLE `asociados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `categorias`
@@ -150,13 +157,13 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `imagenes`
 --
 ALTER TABLE `imagenes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT de la tabla `mensajes`
 --
 ALTER TABLE `mensajes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas
