@@ -27,45 +27,9 @@
         // $queryBuilder = new QueryBuilder('imagenes','ImagenGaleria'); Ya no podemos crearlos por el abstract, lo haremos desde Repository
         // $imagenes = $queryBuilder->findAll();
         $imagenRepository = new ImagenGaleriaRepositorio();
-
         // Creamos un objeto del tipo CategoriaRepositorio
         $categoriaRepositorio = new CategoriaRepositorio();
         
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){ 
-            
-                $descripcion = trim(htmlspecialchars($_POST['descripcion']));
-                
-                $categoria = trim(htmlspecialchars($_POST['categoria']));
-
-                $tiposAceptados = ['image/jpeg','image/jpg','image/gif','image/png'];
-                $imagen = new File('imagen', $tiposAceptados);
-
-        
-                $imagen -> saveUploadFile(ImagenGaleria::RUTA_IMAGENES_GALLERY);
-                $imagen -> copyFile(ImagenGaleria::RUTA_IMAGENES_GALLERY, ImagenGaleria::RUTA_IMAGENES_PORTFOLIO);
-
-                //Si llega hasta aqui, es que no ha habido errores y se ha subido la imagen
-                // $sql = "INSERT INTO imagenes (nombre,descripcion) VALUES (:nombre,:descripcion)";
-                // $pdoStatement = $connection->prepare($sql);
-                // $parametersStatementArray = [':nombre'=>$imagen->getFileName(), ':descripcion'=>$descripcion];
-                // //Lanzamos la sentecia y vemos si se ha ejecutado correctamente.
-                // $response = $pdoStatement->execute($parametersStatementArray);
-                // if($response === false){
-                //     $errores[] = 'No se ha podido guardar la imagen en la base de datos.';
-                // }else{
-                //     $descripcion = '';
-                //     $mensaje = 'Imagen guardada';
-                // }
-
-                // $querySQL = 'Select * from imagenes';
-                // $queryStatement = $connection->query($querySQL);
-
-                $imagenGaleria = new ImagenGaleria($imagen->getFileName(), $descripcion, categoria: $categoria);
-                $imagenRepository->save($imagenGaleria);
-                $descripcion = ""; // Reiniciamos la variables para que no aparezca rellena en el formulario
-                $mensaje = 'Imagen guardada';
-                
-            } 
 
     }
     catch (FileException $exception) {
