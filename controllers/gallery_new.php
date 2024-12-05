@@ -10,7 +10,6 @@ require_once 'entities/repository/ImagenGaleriaRepositorio.class.php';
 require_once 'entities/repository/CategoriaRepositorio.class.php';
 
 // Definimos el array de errores y las varibles que utilizaremos en galeria.view
-$errores = [];
 $descripcion = '';
 $mensaje = '';
 
@@ -28,6 +27,8 @@ try {
     $imagenRepository->save($imagenGaleria);
     $descripcion = ""; // Reiniciamos la variables para que no aparezca rellena en el formulario
     $mensaje = 'Imagen guardada';
+    // Método info es propia de la clase Monolog/Logger
+    App::get('logger')->$log->info();
 
     
 } catch (FileException $exception) {
