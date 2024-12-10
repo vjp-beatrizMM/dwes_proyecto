@@ -1,4 +1,5 @@
 <?php
+namespace proyecto\entities;
 class Request{
 
     public static function uri(){

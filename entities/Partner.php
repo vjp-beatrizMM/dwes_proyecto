@@ -1,6 +1,8 @@
 <?php
 
-require_once 'database/IEntity.class.php';
+// require_once 'database/IEntity.class.php';
+namespace proyecto\entities;
+use IEntity;
 
 class Partner implements IEntity {
     

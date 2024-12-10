@@ -1,4 +1,6 @@
 <?php
+namespace proyecto\utils;
+
 function esOpcionMenuActiva(string $opcionMenu): bool
 {
     //Este método es redundante y estricto con la coincidencia de la ruta y la opción

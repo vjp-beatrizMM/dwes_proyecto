@@ -1,5 +1,8 @@
 <?php
-require_once 'entities/database/IEntity.class.php';
+// require_once 'entities/database/IEntity.class.php';
+namespace proyecto\entities;
+use IEntity;
+use DateTime;
 
 class Message implements IEntity
 {

@@ -1,6 +1,10 @@
 <?php
-require_once 'exceptions/AppException.class.php';
-require_once 'utils/strings.php';
+// require_once 'exceptions/AppException.class.php';
+// require_once 'utils/strings.php'
+namespace proyecto\entities;
+use proyecto\utils;
+use proyecto\entities\AppException;
+
 
     // Inyección de dependencias, no crearemos el objeto, solicitaremos al contenedor que nos devuelva el que necesitamos
     class App {
@@ -23,7 +27,7 @@ require_once 'utils/strings.php';
         public static function get(string $key){
             if(!array_key_exists($key, self::$container)){
                 // throw new AppException(ERROR_STRINGS[ERROR_APP_CORE]);
-                throw new AppException(getErrorString(ERROR_APP_CORE));
+                throw new AppException(utils\getErrorString(ERROR_APP_CORE));
             }
             return static::$container[$key]; //Static es más flexible que self porque permite extender la funcionalidad
         }

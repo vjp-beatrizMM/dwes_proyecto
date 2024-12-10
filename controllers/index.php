@@ -1,11 +1,18 @@
 <?php
-require_once "utils/ultis.php";
-require_once "entities/ImagenGaleria.class.php";
-require_once "entities/Partner.class.php";
-require_once "entities/Connection.class.php";
-require_once "entities/repository/ImagenGaleriaRepositorio.class.php";
-require_once 'entities/repository/AsociadoRepositorio.class.php';
+// require_once "utils/ultis.php";
+// require_once "entities/ImagenGaleria.class.php";
+// require_once "entities/Partner.class.php";
+// require_once "entities/Connection.class.php";
+// require_once "entities/repository/ImagenGaleriaRepositorio.class.php";
+// require_once 'entities/repository/AsociadoRepositorio.class.php';
 
+use proyecto\entities;
+use proyecto\entities\ImagenGaleriaRepositorio;
+use proyecto\entities\AsociadoRepositorio;
+use proyecto\entities\FileException;
+use proyecto\entities\QueryException;
+use proyecto\entities\AppException;
+use proyecto\entities\App;
 //PARTE GALERÍA
 
 // A partir de ahora, vamos a mostrar las imágenes que tenemos en la base de datos, ya no nos hace falta generar el array de imágenes

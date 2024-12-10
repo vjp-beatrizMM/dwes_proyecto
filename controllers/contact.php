@@ -1,14 +1,23 @@
 <?php
 
-require "utils/ultis.php";
-require_once 'entities/repository/MensajeRepositorio.class.php';
-require_once 'entities/Message.class.php';
-require_once 'exceptions/FileException.class.php';
-require_once 'exceptions/QueryException.class.php';
-require_once 'exceptions/AppException.class.php';
-require_once 'entities/File.class.php';
-require_once 'entities/Connection.class.php';
-require_once 'entities/App.class.php';
+// require "utils/ultis.php";
+// require_once 'entities/repository/MensajeRepositorio.class.php';
+// require_once 'entities/Message.class.php';
+// require_once 'exceptions/FileException.class.php';
+// require_once 'exceptions/QueryException.class.php';
+// require_once 'exceptions/AppException.class.php';
+// require_once 'entities/File.class.php';
+// require_once 'entities/Connection.class.php';
+// require_once 'entities/App.class.php';
+
+use proyecto\entities;
+use proyecto\utils;
+use proyecto\entities\App;
+use proyecto\entities\MensajeRepositorio;
+use proyecto\entities\Message;
+use proyecto\entities\FileException;
+use proyecto\entities\QueryException;
+use proyecto\entities\AppException;
 
 $errores = [];
 

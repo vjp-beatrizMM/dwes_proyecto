@@ -1,6 +1,8 @@
 <?php
 
-require_once 'utils/bootstrap.php';
+use proyecto\entities\App;
+use proyecto\entities\Request;
+require_once '../utils/bootstrap.php';
 
 //$router= new Router();
 

@@ -1,6 +1,7 @@
 <?php
-require_once 'exceptions/FileException.class.php';
-require_once 'utils/strings.php';
+// require_once 'exceptions/FileException.class.php';
+// require_once 'utils/strings.php';
+namespace proyecto\entities;
 class File {
     private $file; //Fichero que se subirá al servidor, contendrá los atributos guardados en la variable global $_FILES
     private $fileName; //Nombre del fichero a la subida

@@ -1,8 +1,14 @@
 <?php
-require_once 'exceptions/QueryException.class.php';
-require_once 'utils/strings.php';
-require_once 'entities/App.class.php';
-require_once 'entities/Categoria.class.php';
+// require_once 'exceptions/QueryException.class.php';
+// require_once 'utils/strings.php';
+// require_once 'entities/App.class.php';
+// require_once 'entities/Categoria.class.php';
+namespace proyecto\entities;
+use PDO;
+use PDOException;
+use IEntity;
+use Exception;
+use proyecto\utils;
 
 /**
  * Clase abstracta QueryBuilder
@@ -55,7 +61,7 @@ abstract class QueryBuilder {
         // Ejecuta la consulta y verifica si falla.
         if ($pdoStatement->execute() === false) {
             // Lanza la excepción personalizada si ocurre un error.
-            throw new QueryException(getErrorString(ERROR_EXECUTE_STATEMENT));
+            throw new QueryException(utils\getErrorString(ERROR_EXECUTE_STATEMENT));
         }
 
         // Devuelve los resultados obtenidos al ejecutar la consulta

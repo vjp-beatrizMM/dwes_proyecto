@@ -1,5 +1,7 @@
 <?php
-require_once 'entities/database/IEntity.class.php';
+// require_once 'entities/database/IEntity.class.php';
+namespace proyecto\entities;
+use IEntity;
 
 //Creamos la clase categoría con la implementación de la intefaz IEntity
 class Categoria implements IEntity

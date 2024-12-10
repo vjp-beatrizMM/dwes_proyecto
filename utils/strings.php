@@ -1,4 +1,5 @@
 <?php
+namespace proyecto\utils;
 
     // Nos definimos las constantes con los errores.
     define('ERROR_MV_UP_FILE', 9);

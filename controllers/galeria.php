@@ -1,13 +1,20 @@
 <?php 
-    require_once 'utils/ultis.php';
-    require_once 'entities/File.class.php';
-    require_once 'entities/ImagenGaleria.class.php';
-    require_once 'exceptions/FileException.class.php';
-    require_once 'entities/Connection.class.php';
-    require_once 'entities/QueryBuilders.class.php';
-    require_once 'exceptions/AppException.class.php';
-    require_once 'entities/repository/ImagenGaleriaRepositorio.class.php';
-    require_once 'entities/repository/CategoriaRepositorio.class.php';
+use proyecto\utils;
+use proyecto\entities;
+use proyecto\entities\ImagenGaleriaRepositorio;
+use proyecto\entities\CategoriaRepositorio;
+use proyecto\entities\FileException;
+use proyecto\entities\QueryException;
+use proyecto\entities\AppException;
+    // require_once 'utils/ultis.php';
+    // require_once 'entities/File.class.php';
+    // require_once 'entities/ImagenGaleria.class.php';
+    // require_once 'exceptions/FileException.class.php';
+    // require_once 'entities/Connection.class.php';
+    // require_once 'entities/QueryBuilders.class.php';
+    // require_once 'exceptions/AppException.class.php';
+    // require_once 'entities/repository/ImagenGaleriaRepositorio.class.php';
+    // require_once 'entities/repository/CategoriaRepositorio.class.php';
 
     // Definimos el array de errores y las varibles que utilizaremos en galeria.view
     $errores = [];

@@ -1,5 +1,7 @@
 <?php
-    require_once 'entities/QueryBuilders.class.php';
+    // require_once 'entities/QueryBuilders.class.php';
+    namespace proyecto\entities;
+use proyecto\utils;
 
     class AsociadoRepositorio extends QueryBuilder{
         

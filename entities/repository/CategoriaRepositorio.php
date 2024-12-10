@@ -1,7 +1,8 @@
 <?php
-    require_once 'entities/QueryBuilders.class.php';
-    require_once 'entities/Categoria.class.php';
-
+    // require_once 'entities/QueryBuilders.class.php';
+    // require_once 'entities/Categoria.class.php';
+    namespace proyecto\entities;
+    use proyecto\utils;
     class CategoriaRepositorio extends QueryBuilder{
         public function __construct(string $table = 'categorias', string $classEntity = 'Categoria')
         {
