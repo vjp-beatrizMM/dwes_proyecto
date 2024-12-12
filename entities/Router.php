@@ -42,5 +42,5 @@ class Router
         }
     }
 
-    //Función redirect no la hacemos porque realiza lomismo que hace header()
+    //Función redirect no la hacemos porque realiza lo mismo que hace header()
 }

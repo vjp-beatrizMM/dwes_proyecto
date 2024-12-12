@@ -6,13 +6,15 @@
 // require_once "entities/repository/ImagenGaleriaRepositorio.class.php";
 // require_once 'entities/repository/AsociadoRepositorio.class.php';
 
-use proyecto\entities;
 use proyecto\entities\ImagenGaleriaRepositorio;
 use proyecto\entities\AsociadoRepositorio;
 use proyecto\entities\FileException;
 use proyecto\entities\QueryException;
 use proyecto\entities\AppException;
-use proyecto\entities\App;
+use proyecto\entities\Partner;
+
+use function proyecto\utils\getRandomPartners;
+
 //PARTE GALERÍA
 
 // A partir de ahora, vamos a mostrar las imágenes que tenemos en la base de datos, ya no nos hace falta generar el array de imágenes
@@ -42,9 +44,6 @@ $imagenes = [];
 $asociados = [];
 
 try{
-    $config=require_once'app/config.php';
-  
-    App::bind('config',$config);
   
     $imagenRepositorio= new ImagenGaleriaRepositorio();
     $asociadosRepositorio = new AsociadoRepositorio();

@@ -26,38 +26,38 @@
     <div class="collapse navbar-collapse navbar-right" id="menu">
       <ul class="nav navbar-nav">
         <!-- Opción del menú: Inicio -->
-        <li class="<?php echo utils\esOpcionMenuActiva("/index.php") ? "active" : "" ?> lien">
-          <a href="<?php echo utils\esOpcionMenuActiva("/index.php") ? "#" : "index.php" ?>">
+        <li class="<?php echo utils\esOpcionMenuActiva("/index") ? "active" : "" ?> lien">
+          <a href="<?php echo utils\esOpcionMenuActiva("/index") ? "#" : "index" ?>">
             <i class="fa fa-home sr-icons"></i> Home
           </a>
         </li>
         <!-- Opción del menú: Sobre nosotros -->
-        <li class="<?php echo utils\esOpcionMenuActiva("/about.php") ? "active" : "" ?> lien">
-          <a href="<?php echo utils\esOpcionMenuActiva("/about.php") ? "#" : "about.php" ?>">
+        <li class="<?php echo utils\esOpcionMenuActiva("/about") ? "active" : "" ?> lien">
+          <a href="<?php echo utils\esOpcionMenuActiva("/about") ? "#" : "about" ?>">
             <i class="fa fa-bookmark sr-icons"></i> About
           </a>
         </li>
         <!-- Opción del menú: Blog -->
-        <li class="<?php echo utils\existeOpcionMenuActivaEnArray(['/blog.php', '/single_post.php']) ? 'active' : '' ?> lien">
-          <a href="<?php echo utils\esOpcionMenuActiva("/blog.php") ? "#" : "blog.php" ?>">
+        <li class="<?php echo utils\existeOpcionMenuActivaEnArray(['/blog', '/single_post']) ? 'active' : '' ?> lien">
+          <a href="<?php echo utils\esOpcionMenuActiva("/blog") ? "#" : "blog" ?>">
             <i class="fa fa-file-text sr-icons"></i> Blog
           </a>
         </li>
         <!-- Opción del menú: Contacto -->
-        <li class="<?php echo utils\esOpcionMenuActiva("/contact.php") ? "active" : "" ?> lien">
-          <a href="<?php echo utils\esOpcionMenuActiva("/contact.php") ? "#" : "contact.php" ?>">
+        <li class="<?php echo utils\esOpcionMenuActiva("/contact") ? "active" : "" ?> lien">
+          <a href="<?php echo utils\esOpcionMenuActiva("/contact") ? "#" : "contact" ?>">
             <i class="fa fa-phone-square sr-icons"></i> Contact
           </a>
         </li>
         <!-- Opción del menú: Galería (añadida después) -->
-        <li class="<?php echo utils\esOpcionMenuActiva("/galeria.php") ? "active" : "" ?> lien">
-          <a href="<?php echo utils\esOpcionMenuActiva("/galeria.php") ? "#" : "galeria.php" ?>">
+        <li class="<?php echo utils\esOpcionMenuActiva("/galeria") ? "active" : "" ?> lien">
+          <a href="<?php echo utils\esOpcionMenuActiva("/galeria") ? "#" : "galeria" ?>">
             <i class="fa fa-image sr-icons"></i> Gallery
           </a>
         </li>
         <!-- Opción del menú: Socios (añadida después) -->
-        <li class="<?php echo utils\esOpcionMenuActiva("/partners.php") ? "active" : "" ?>">
-          <a href="<?php echo utils\esOpcionMenuActiva("/partners.php") ? "#" : "partners.php" ?>">
+        <li class="<?php echo utils\esOpcionMenuActiva("/partners") ? "active" : "" ?>">
+          <a href="<?php echo utils\esOpcionMenuActiva("/partners") ? "#" : "partners" ?>">
             <i class="fa fa-hand-o-right"></i> Partners
           </a>
         </li>

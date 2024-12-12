@@ -22,10 +22,7 @@ use proyecto\entities\AppException;
 $errores = [];
 
 try {
-    // Configuración de la aplicación y conexión
-    $config = require_once 'app/config.php';
-    App::bind('config', $config);
-
+    
     // Creamos una instancia del repositorio
     $mensajeRepositorio = new MensajeRepositorio();
 

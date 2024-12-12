@@ -12,12 +12,10 @@
 // require_once 'entities/File.class.php';
 
 use proyecto\entities;
-use proyecto\entities\ImagenGaleriaRepositorio;
 use proyecto\entities\AsociadoRepositorio;
 use proyecto\entities\FileException;
 use proyecto\entities\QueryException;
 use proyecto\entities\AppException;
-use proyecto\entities\App;
 use proyecto\entities\File;
 
 
@@ -26,9 +24,6 @@ $descripcion = '';
 $mensaje = '';
 
 try {
-    // Configuración de la aplicación y conexión
-    $config = require_once 'app/config.php';
-    App::bind('config', $config);
 
     // Creamos una instancia del repositorio
     $asociadosRepositorio = new AsociadoRepositorio();
