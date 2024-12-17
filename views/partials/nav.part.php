@@ -26,38 +26,38 @@
     <div class="collapse navbar-collapse navbar-right" id="menu">
       <ul class="nav navbar-nav">
         <!-- Opción del menú: Inicio -->
-        <li class="<?php echo utils\esOpcionMenuActiva("/index") ? "active" : "" ?> lien">
-          <a href="<?php echo utils\esOpcionMenuActiva("/index") ? "#" : "index" ?>">
+        <li class="<?php echo esOpcionMenuActiva("/index") ? "active" : "" ?> lien">
+          <a href="<?php echo esOpcionMenuActiva("/index") ? "#" : "index" ?>">
             <i class="fa fa-home sr-icons"></i> Home
           </a>
         </li>
         <!-- Opción del menú: Sobre nosotros -->
-        <li class="<?php echo utils\esOpcionMenuActiva("/about") ? "active" : "" ?> lien">
-          <a href="<?php echo utils\esOpcionMenuActiva("/about") ? "#" : "about" ?>">
+        <li class="<?php echo esOpcionMenuActiva("/about") ? "active" : "" ?> lien">
+          <a href="<?php echo esOpcionMenuActiva("/about") ? "#" : "about" ?>">
             <i class="fa fa-bookmark sr-icons"></i> About
           </a>
         </li>
         <!-- Opción del menú: Blog -->
-        <li class="<?php echo utils\existeOpcionMenuActivaEnArray(['/blog', '/single_post']) ? 'active' : '' ?> lien">
-          <a href="<?php echo utils\esOpcionMenuActiva("/blog") ? "#" : "blog" ?>">
+        <li class="<?php echo existeOpcionMenuActivaEnArray(['/blog', '/single_post']) ? 'active' : '' ?> lien">
+          <a href="<?php echo esOpcionMenuActiva("/blog") ? "#" : "blog" ?>">
             <i class="fa fa-file-text sr-icons"></i> Blog
           </a>
         </li>
         <!-- Opción del menú: Contacto -->
-        <li class="<?php echo utils\esOpcionMenuActiva("/contact") ? "active" : "" ?> lien">
-          <a href="<?php echo utils\esOpcionMenuActiva("/contact") ? "#" : "contact" ?>">
+        <li class="<?php echo esOpcionMenuActiva("/contact") ? "active" : "" ?> lien">
+          <a href="<?php echo esOpcionMenuActiva("/contact") ? "#" : "contact" ?>">
             <i class="fa fa-phone-square sr-icons"></i> Contact
           </a>
         </li>
         <!-- Opción del menú: Galería (añadida después) -->
-        <li class="<?php echo utils\esOpcionMenuActiva("/galeria") ? "active" : "" ?> lien">
-          <a href="<?php echo utils\esOpcionMenuActiva("/galeria") ? "#" : "galeria" ?>">
+        <li class="<?php echo esOpcionMenuActiva("/galeria") ? "active" : "" ?> lien">
+          <a href="<?php echo esOpcionMenuActiva("/galeria") ? "#" : "galeria" ?>">
             <i class="fa fa-image sr-icons"></i> Gallery
           </a>
         </li>
         <!-- Opción del menú: Socios (añadida después) -->
-        <li class="<?php echo utils\esOpcionMenuActiva("/partners") ? "active" : "" ?>">
-          <a href="<?php echo utils\esOpcionMenuActiva("/partners") ? "#" : "partners" ?>">
+        <li class="<?php echo esOpcionMenuActiva("/partners") ? "active" : "" ?>">
+          <a href="<?php echo esOpcionMenuActiva("/partners") ? "#" : "partners" ?>">
             <i class="fa fa-hand-o-right"></i> Partners
           </a>
         </li>

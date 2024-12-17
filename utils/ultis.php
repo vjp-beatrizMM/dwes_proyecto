@@ -1,5 +1,4 @@
 <?php
-namespace proyecto\utils;
 
 function esOpcionMenuActiva(string $opcionMenu): bool
 {
